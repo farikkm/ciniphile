@@ -1,0 +1,57 @@
+// ============================================= HELPERS-IMPORTS ============================================= //
+
+@import './helpers/fonts';
+@import './helpers/vars';
+@import './helpers/mixins';
+@import './helpers/reset';
+
+// ========================================  COMMON-STYLES  ================================================== //
+
+body {
+   font-family: 'Raleway';
+   font-weight: 400;
+   background-color: $bg-color;
+   color: white;
+   &._lock {
+      overflow: hidden;
+   }
+}
+#app {
+   height: 100%;
+}
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   min-height: 100%;
+   width: 100%;
+   overflow: hidden;
+}
+.page {
+   flex: 1 1 auto;
+}
+.container {
+   max-width: 1320px + 30px;
+   width: 100%;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+// ============================================= COMMON-IMPORTS ============================================= //
+
+@import './common/header';
+@import './common/footer';
+
+// ============================================= UI-IMPORTS ============================================= //
+
+@import './UI/btnMore';
+
+// ============================================= COMPONENTS-IMPORTS ============================================= //
+
+@import './components/upcoming';
+@import './components/slider';
+@import './components/topSlider';
+@import './components/detailedInfo';
+@import './components/content';
+@import './components/search'
+
+// ========================================================================================================================================= //

@@ -1,0 +1,125 @@
+.slider {
+   transition: all .3s ease 0s;
+   &__title {
+      display: inline-flex;
+      align-items: center;
+      padding: 23px 0px 40px 100px;
+      gap: 18px;
+      @include media-max(1024) {
+         padding: 23px 0px 40px 70px;
+      }
+      @include media-max(768) {
+         padding: 23px 0px 30px 30px;
+      }
+      & > img {
+         user-select: none;
+         transition: transform 0.3s ease 0s;
+      }
+      &:hover {
+         & > img {
+            transform: translate(5px, 0px);
+         }
+         & > a {
+            opacity: 0.7;
+         }
+      }
+      & > a {
+         font-weight: 700;
+         font-size: 22px;
+         transition: opacity 0.3s ease 0s;
+         line-height: 26px;
+      }
+   }
+
+   &__item {
+      height: 600px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #000000;
+      filter: drop-shadow(0px 4px 4px #000000);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      user-select: none;
+      cursor: grab;
+      &:active {
+         cursor: grabbing;
+      }
+
+      &:last-child {
+         cursor: pointer;
+         & > a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            & > img {
+               width: 50px;
+               height: 50px;
+            }
+            & > span {
+               font-weight: 700;
+               font-size: 20px;
+               line-height: 30px;
+            }
+         }
+      }
+   }
+   &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+   }
+}
+
+.slider__swiper {
+   padding: 0px 100px 50px 100px;
+
+   @include media-max(1024) {
+      padding: 0px 70px 50px 70px;
+   }
+   @include media-max(768) {
+      padding: 0px 30px 30px;
+   }
+
+   & .swiper-button-next,
+   & .swiper-button-prev {
+      @include media-min(768) {
+         position: absolute;
+         right: -1px;
+         top: 0;
+         width: 100px;
+         background: linear-gradient(
+            270deg,
+            rgba(20, 20, 20, 0.9) 0%,
+            rgba(20, 20, 20, 0.6) 36.46%,
+            rgba(20, 20, 20, 0.149846) 91.67%,
+            rgba(20, 20, 20, 0) 100%
+         );
+         height: 100%;
+      }
+      &::after {
+         color: #fff;
+         font-weight: 700;
+         font-size: 30px;
+      }
+   }
+   & .swiper-button-prev {
+      @include media-min(768) {
+         left: 0;
+         background: linear-gradient(
+            88.67deg,
+            rgba(20, 20, 20, 0.9) 1.08%,
+            rgba(20, 20, 20, 0.6) 36.72%,
+            rgba(20, 20, 20, 0.149846) 90.68%,
+            rgba(20, 20, 20, 0) 98.82%
+         );
+      }
+   }
+
+   & .swiper-button-disabled {
+      display: none;
+   }
+}
